@@ -14,13 +14,15 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10safe_entry.proto\x12\nSafe_Entry\"H\n\x07Persons\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\t\x12\x0c\n\x04time\x18\x04 \x01(\t\"Q\n\x10\x43heck_In_Request\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\t\x12\x0c\n\x04time\x18\x04 \x01(\t\"_\n\x0e\x43heck_In_Reply\x12\x13\n\x0buser_id_res\x18\x01 \x01(\t\x12\x14\n\x0clocation_res\x18\x02 \x01(\t\x12\x10\n\x08\x64\x61te_res\x18\x03 \x01(\t\x12\x10\n\x08time_res\x18\x04 \x01(\t2T\n\nSafe_Entry\x12\x46\n\x08\x43heck_In\x12\x1c.Safe_Entry.Check_In_Request\x1a\x1a.Safe_Entry.Check_In_Reply\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10safe_entry.proto\x12\nSafe_Entry\"H\n\x07Persons\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\t\x12\x0c\n\x04time\x18\x04 \x01(\t\"Q\n\x10\x43heck_In_Request\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\t\x12\x0c\n\x04time\x18\x04 \x01(\t\"_\n\x0e\x43heck_In_Reply\x12\x13\n\x0buser_id_res\x18\x01 \x01(\t\x12\x14\n\x0clocation_res\x18\x02 \x01(\t\x12\x10\n\x08\x64\x61te_res\x18\x03 \x01(\t\x12\x10\n\x08time_res\x18\x04 \x01(\t\"T\n\x11\x43heck_Out_Request\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12\r\n\x05\x64\x61te1\x18\x03 \x01(\t\x12\r\n\x05time1\x18\x04 \x01(\t\"b\n\x0f\x43heck_Out_Reply\x12\x13\n\x0buser_id_res\x18\x01 \x01(\t\x12\x14\n\x0clocation_res\x18\x02 \x01(\t\x12\x11\n\tdate_res1\x18\x03 \x01(\t\x12\x11\n\ttime_res1\x18\x04 \x01(\t2\x9f\x01\n\nSafe_Entry\x12\x46\n\x08\x43heck_In\x12\x1c.Safe_Entry.Check_In_Request\x1a\x1a.Safe_Entry.Check_In_Reply\"\x00\x12I\n\tCheck_Out\x12\x1d.Safe_Entry.Check_Out_Request\x1a\x1b.Safe_Entry.Check_Out_Reply\"\x00\x62\x06proto3')
 
 
 
 _PERSONS = DESCRIPTOR.message_types_by_name['Persons']
 _CHECK_IN_REQUEST = DESCRIPTOR.message_types_by_name['Check_In_Request']
 _CHECK_IN_REPLY = DESCRIPTOR.message_types_by_name['Check_In_Reply']
+_CHECK_OUT_REQUEST = DESCRIPTOR.message_types_by_name['Check_Out_Request']
+_CHECK_OUT_REPLY = DESCRIPTOR.message_types_by_name['Check_Out_Reply']
 Persons = _reflection.GeneratedProtocolMessageType('Persons', (_message.Message,), {
   'DESCRIPTOR' : _PERSONS,
   '__module__' : 'safe_entry_pb2'
@@ -42,6 +44,20 @@ Check_In_Reply = _reflection.GeneratedProtocolMessageType('Check_In_Reply', (_me
   })
 _sym_db.RegisterMessage(Check_In_Reply)
 
+Check_Out_Request = _reflection.GeneratedProtocolMessageType('Check_Out_Request', (_message.Message,), {
+  'DESCRIPTOR' : _CHECK_OUT_REQUEST,
+  '__module__' : 'safe_entry_pb2'
+  # @@protoc_insertion_point(class_scope:Safe_Entry.Check_Out_Request)
+  })
+_sym_db.RegisterMessage(Check_Out_Request)
+
+Check_Out_Reply = _reflection.GeneratedProtocolMessageType('Check_Out_Reply', (_message.Message,), {
+  'DESCRIPTOR' : _CHECK_OUT_REPLY,
+  '__module__' : 'safe_entry_pb2'
+  # @@protoc_insertion_point(class_scope:Safe_Entry.Check_Out_Reply)
+  })
+_sym_db.RegisterMessage(Check_Out_Reply)
+
 _SAFE_ENTRY = DESCRIPTOR.services_by_name['Safe_Entry']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -52,6 +68,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CHECK_IN_REQUEST._serialized_end=187
   _CHECK_IN_REPLY._serialized_start=189
   _CHECK_IN_REPLY._serialized_end=284
-  _SAFE_ENTRY._serialized_start=286
-  _SAFE_ENTRY._serialized_end=370
+  _CHECK_OUT_REQUEST._serialized_start=286
+  _CHECK_OUT_REQUEST._serialized_end=370
+  _CHECK_OUT_REPLY._serialized_start=372
+  _CHECK_OUT_REPLY._serialized_end=470
+  _SAFE_ENTRY._serialized_start=473
+  _SAFE_ENTRY._serialized_end=632
 # @@protoc_insertion_point(module_scope)

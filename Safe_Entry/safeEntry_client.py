@@ -64,6 +64,25 @@ def run():
                     csv_writer.writeheader()
                     csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
 
+                checkout_input = input("1: Confirm check-out\n")
+
+                if checkout_input == "1":
+                    check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514", location="Bedok Mall",
+                                                                   date=current_date, time=current_time)
+                    check_out_reply = stub.Check_In(check_in_request)
+                    print("=== Check-Out Information ===")
+                    print("Check-Out Date: " + str(check_out_reply.date_res))
+                    print("Check-Out Time: " + str(check_out_reply.time_res))
+                    print("============================")
+
+                    with open('out_storage.csv', 'a', newline='') as csvfile2:
+                        fieldnames = ['Location', 'Date', 'Time']
+                        csv_writer2 = csv.DictWriter(csvfile2, fieldnames= fieldnames)
+                        csv_writer2.writeheader()
+                        csv_writer2.writerow({'Location' : check_out_reply.location_res, 'Date' : check_out_reply.date_res, 'Time' : check_out_reply.time_res})
+
+                
+
 
 
             elif location_input == "2":
@@ -82,6 +101,24 @@ def run():
                     csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
                     csv_writer.writeheader()
                     csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
+                
+                checkout_input = input("1: Confirm check-out\n")
+
+                if checkout_input == "1":
+                    check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514", location="Changi Village Hawker Centre",
+                                                                   date=current_date, time=current_time)
+                    check_out_reply = stub.Check_In(check_in_request)
+                    print("=== Check-Out Information ===")
+                    print("Check-Out Date: " + str(check_out_reply.date_res))
+                    print("Check-Out Time: " + str(check_out_reply.time_res))
+                    print("============================")
+
+                    with open('out_storage.csv', 'a', newline='') as csvfile2:
+                        fieldnames = ['Location', 'Date', 'Time']
+                        csv_writer2 = csv.DictWriter(csvfile2, fieldnames= fieldnames)
+                        csv_writer2.writeheader()
+                        csv_writer2.writerow({'Location' : check_out_reply.location_res, 'Date' : check_out_reply.date_res, 'Time' : check_out_reply.time_res})
+
 
             elif location_input == "3":
                 check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002513", location="Whitesands Mall",
@@ -98,6 +135,23 @@ def run():
                     csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
                     csv_writer.writeheader()
                     csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
+                
+                checkout_input = input("1: Confirm check-out\n")
+
+                if checkout_input == "1":
+                    check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514", location="Whitesands Mall",
+                                                                   date=current_date, time=current_time)
+                    check_out_reply = stub.Check_In(check_in_request)
+                    print("=== Check-Out Information ===")
+                    print("Check-Out Date: " + str(check_out_reply.date_res))
+                    print("Check-Out Time: " + str(check_out_reply.time_res))
+                    print("============================")
+
+                    with open('out_storage.csv', 'a', newline='') as csvfile2:
+                        fieldnames = ['Location', 'Date', 'Time']
+                        csv_writer2 = csv.DictWriter(csvfile2, fieldnames= fieldnames)
+                        csv_writer2.writeheader()
+                        csv_writer2.writerow({'Location' : check_out_reply.location_res, 'Date' : check_out_reply.date_res, 'Time' : check_out_reply.time_res})
 
         elif rpc_call == "2":
             print("Welcome, 2002514")
@@ -119,6 +173,23 @@ def run():
                     csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
                     csv_writer.writeheader()
                     csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
+                
+                checkout_input = input("1: Confirm check-out\n")
+
+                if checkout_input == "1":
+                    check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514", location="Bedok Mall",
+                                                                   date=current_date, time=current_time)
+                    check_out_reply = stub.Check_In(check_in_request)
+                    print("=== Check-Out Information ===")
+                    print("Check-Out Date: " + str(check_out_reply.date_res))
+                    print("Check-Out Time: " + str(check_out_reply.time_res))
+                    print("============================")
+
+                    with open('out_storage.csv', 'a', newline='') as csvfile2:
+                        fieldnames = ['Location', 'Date', 'Time']
+                        csv_writer2 = csv.DictWriter(csvfile2, fieldnames= fieldnames)
+                        csv_writer2.writeheader()
+                        csv_writer2.writerow({'Location' : check_out_reply.location_res, 'Date' : check_out_reply.date_res, 'Time' : check_out_reply.time_res})
 
             elif location_input == "2":
                 check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514",
@@ -137,6 +208,24 @@ def run():
                     csv_writer.writeheader()
                     csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
 
+                checkout_input = input("1: Confirm check-out\n")
+
+                if checkout_input == "1":
+                    check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514", location="Changi Village Hawker Centre",
+                                                                   date=current_date, time=current_time)
+                    check_out_reply = stub.Check_In(check_in_request)
+                    print("=== Check-Out Information ===")
+                    print("Check-Out Date: " + str(check_out_reply.date_res))
+                    print("Check-Out Time: " + str(check_out_reply.time_res))
+                    print("============================")
+
+                    with open('out_storage.csv', 'a', newline='') as csvfile2:
+                        fieldnames = ['Location', 'Date', 'Time']
+                        csv_writer2 = csv.DictWriter(csvfile2, fieldnames= fieldnames)
+                        csv_writer2.writeheader()
+                        csv_writer2.writerow({'Location' : check_out_reply.location_res, 'Date' : check_out_reply.date_res, 'Time' : check_out_reply.time_res})
+
+
             elif location_input == "3":
                 check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514", location="Whitesands Mall",
                                                                    date=current_date, time=current_time)
@@ -152,6 +241,24 @@ def run():
                     csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
                     csv_writer.writeheader()
                     csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
+
+                checkout_input = input("1: Confirm check-out\n")
+
+                if checkout_input == "1":
+                    check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514", location="Whitesands Mall",
+                                                                   date=current_date, time=current_time)
+                    check_out_reply = stub.Check_In(check_in_request)
+                    print("=== Check-Out Information ===")
+                    print("Check-Out Date: " + str(check_out_reply.date_res))
+                    print("Check-Out Time: " + str(check_out_reply.time_res))
+                    print("============================")
+
+                    with open('out_storage.csv', 'a', newline='') as csvfile2:
+                        fieldnames = ['Location', 'Date', 'Time']
+                        csv_writer2 = csv.DictWriter(csvfile2, fieldnames= fieldnames)
+                        csv_writer2.writeheader()
+                        csv_writer2.writerow({'Location' : check_out_reply.location_res, 'Date' : check_out_reply.date_res, 'Time' : check_out_reply.time_res})
+
 
         else:
             print("Invalid user, restart program")

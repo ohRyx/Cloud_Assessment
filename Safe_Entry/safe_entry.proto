@@ -25,7 +25,10 @@ package Safe_Entry;
 // The safe entry service definition.
 service Safe_Entry {
   rpc Check_In (Check_In_Request) returns (Check_In_Reply) {}
+
+  rpc Check_Out (Check_Out_Request) returns (Check_Out_Reply) {}
 }
+
 
 // Contain the user information
 message Persons {
@@ -50,6 +53,20 @@ message Check_In_Reply {
   string location_res = 2;
   string date_res = 3;
   string time_res = 4;
+}
+
+message Check_Out_Request {
+  string user_id = 1;
+  string location = 2;
+  string date1 = 3;
+  string time1 = 4;
+}
+
+message Check_Out_Reply {
+  string user_id_res = 1;
+  string location_res = 2;
+  string date_res1 = 3;
+  string time_res1 = 4;
 }
 
 

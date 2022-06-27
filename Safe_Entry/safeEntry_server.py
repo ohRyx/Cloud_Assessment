@@ -25,6 +25,11 @@ class Safe_Entry(safe_entry_pb2_grpc.Safe_EntryServicer):
     def Check_In(self, request, context):
         return safe_entry_pb2.Check_In_Request(user_id=request.user_id, location=request.location, date=request.date,
                                                time=request.time)
+    
+    def Check_Out(self, request, context):
+        return safe_entry_pb2.Check_Out_Request(user_id=request.user_id, location=request.location, date=request.date,
+                                               time=request.time)
+                                    
 
 
 def serve():
