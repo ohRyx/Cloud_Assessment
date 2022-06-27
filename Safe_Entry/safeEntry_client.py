@@ -21,6 +21,8 @@ import logging
 import grpc
 import safe_entry_pb2_grpc, safe_entry_pb2
 
+import csv
+
 # Get the today date
 today = date.today()
 current_date = today.strftime("%d/%m/%Y")
@@ -56,6 +58,14 @@ def run():
                 print("Check-In Time: " + str(check_in_reply.time_res))
                 print("============================")
 
+                with open('storage.csv', 'a', newline='') as csvfile:
+                    fieldnames = ['Location', 'Date', 'Time']
+                    csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
+                    csv_writer.writeheader()
+                    csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
+
+
+
             elif location_input == "2":
                 check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002513",
                                                                    location="Changi Village Hawker Centre",
@@ -67,6 +77,12 @@ def run():
                 print("Check-In Time: " + str(check_in_reply.time_res))
                 print("============================")
 
+                with open('storage.csv', 'a', newline='') as csvfile:
+                    fieldnames = ['Location', 'Date', 'Time']
+                    csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
+                    csv_writer.writeheader()
+                    csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
+
             elif location_input == "3":
                 check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002513", location="Whitesands Mall",
                                                                    date=current_date, time=current_time)
@@ -76,6 +92,12 @@ def run():
                 print("Check-In Date: " + str(check_in_reply.date_res))
                 print("Check-In Time: " + str(check_in_reply.time_res))
                 print("============================")
+                
+                with open('storage.csv', 'a', newline='') as csvfile:
+                    fieldnames = ['Location', 'Date', 'Time']
+                    csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
+                    csv_writer.writeheader()
+                    csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
 
         elif rpc_call == "2":
             print("Welcome, 2002514")
@@ -92,6 +114,12 @@ def run():
                 print("Check-In Time: " + str(check_in_reply.time_res))
                 print("============================")
 
+                with open('storage.csv', 'a', newline='') as csvfile:
+                    fieldnames = ['Location', 'Date', 'Time']
+                    csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
+                    csv_writer.writeheader()
+                    csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
+
             elif location_input == "2":
                 check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514",
                                                                    location="Changi Village Hawker Centre",
@@ -103,6 +131,12 @@ def run():
                 print("Check-In Time: " + str(check_in_reply.time_res))
                 print("============================")
 
+                with open('storage.csv', 'a', newline='') as csvfile:
+                    fieldnames = ['Location', 'Date', 'Time']
+                    csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
+                    csv_writer.writeheader()
+                    csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
+
             elif location_input == "3":
                 check_in_request = safe_entry_pb2.Check_In_Request(user_id="2002514", location="Whitesands Mall",
                                                                    date=current_date, time=current_time)
@@ -112,6 +146,13 @@ def run():
                 print("Check-In Date: " + str(check_in_reply.date_res))
                 print("Check-In Time: " + str(check_in_reply.time_res))
                 print("============================")
+
+                with open('storage.csv', 'a', newline='') as csvfile:
+                    fieldnames = ['Location', 'Date', 'Time']
+                    csv_writer = csv.DictWriter(csvfile, fieldnames= fieldnames)
+                    csv_writer.writeheader()
+                    csv_writer.writerow({'Location' : check_in_reply.location_res, 'Date' : check_in_reply.date_res, 'Time' : check_in_reply.time_res})
+
         else:
             print("Invalid user, restart program")
 
